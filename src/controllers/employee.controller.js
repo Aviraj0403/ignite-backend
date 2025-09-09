@@ -119,9 +119,6 @@ export const createStudentAccount = async (req, res) => {
     return res.status(500).json({ message: 'Error creating student account', error: error.message });
   }
 };
-
-
-
 // 2. Get student by name (first or last name)
 export const getStudentByName = async (req, res) => {
   try {
@@ -148,8 +145,6 @@ export const getStudentByName = async (req, res) => {
     return res.status(500).json({ message: 'Error fetching student' });
   }
 };
-
-
 // 3. Get all students (optional filter by passing year)
 export const getAllStudents = async (req, res) => {
   try {
@@ -178,9 +173,6 @@ export const getAllStudents = async (req, res) => {
     return res.status(500).json({ message: 'Error fetching students' });
   }
 };
-
-
-
 // 4. Delete student account
 export const deleteStudent = async (req, res) => {
   try {

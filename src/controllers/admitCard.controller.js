@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import AdmitCard from "../models/admitCard.model.js";
 import Student from "../models/student.model.js";
 // import Document from "../models/document.model.js";
-import generateAdmitCardPDF from "../services/generateAdmitCardPDF.js";
+import generateAdmitCardPDF from "../services/pdf/generateAdmitCardPDF.js";
 import Course from "../models/Course.model.js";
 import ExamSubject from "../models/ExamSubject.model.js";
 import { PDFDocument } from 'pdf-lib';

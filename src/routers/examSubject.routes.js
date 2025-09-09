@@ -8,7 +8,7 @@ import {
 } from '../controllers/examSubject.controller.js';
 
 const router = express.Router();
-
+//allot exam subject to course
 router.post('/assignSubjectToCourse', assignSubjectToCourse);
 router.get('/getSubjectsForCourse/:courseId', getSubjectsForCourse);
 router.put('/updateExamSubject/:id', updateExamSubject);

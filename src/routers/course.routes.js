@@ -10,16 +10,19 @@ import { verifyToken } from '../middlewares/verifyToken.js';
 const router = express.Router();
 
 // Create a new course
-router.post('/createCourse', createCourse);
+import upload from '../middlewares/upload.js';  // your multer middleware
 
+// For creating course with image upload
+router.post('/createCourse', upload.single('image'), createCourse);
+
+// For updating course with image upload
+router.put('/updateCourse/:courseId', verifyToken, upload.single('image'), updateCourse);
 // Get all courses
 router.get('/getAllCourses', getAllCourses);
 
 // Get a single course by ID
 router.get('/getCourseById/:courseId', getCourseById);
 
-// Update an existing course
-router.put('/updateCourse/:courseId', verifyToken ,updateCourse);
 
 // Delete a course
 router.delete('/deleteCourse/:courseId', deleteCourse);

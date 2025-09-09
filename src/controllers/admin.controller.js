@@ -39,7 +39,6 @@ export const createEmployeeAccount = async (req, res) => {
     res.status(500).json({ message: 'Error creating employee account', error: error.message });
   }
 };
-
 // Get Verification Logs with populated fields
 export const getVerificationLogs = async (req, res) => {
   try {
@@ -55,7 +54,6 @@ export const getVerificationLogs = async (req, res) => {
     res.status(500).json({ message: 'Error fetching verification logs', error: error.message });
   }
 };
-
 // Get All Students with their User info
 export const getAllStudents = async (req, res) => {
   try {
@@ -66,7 +64,6 @@ export const getAllStudents = async (req, res) => {
     res.status(500).json({ message: 'Error fetching students', error: error.message });
   }
 };
-
 // Update Employee Status (active/inactive)
 export const updateEmployeeStatus = async (req, res) => {
   try {
@@ -208,7 +205,6 @@ export const logout = async (req, res) => {
     res.status(500).json({ message: "Error logging out", error: error.message });
   }
 };
-
 
 /////STUDENT_______________/
 export const getStudentProfile = async (req, res) => {

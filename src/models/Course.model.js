@@ -7,6 +7,7 @@ const courseSchema = new mongoose.Schema({
   duration: { type: Number, required: true },
   department: { type: String },
   description: { type: String },
+  image: { type: String },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
 });
