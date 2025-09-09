@@ -1,0 +1,19 @@
+{
+  "name": "video-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Avi Raj",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.15.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "pdf-lib": "^1.17.1"
+  }
+}

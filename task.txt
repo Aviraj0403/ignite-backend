@@ -1,1 +1,62 @@
 Dynamic course when i add in backend then refelct in ui
+
+
+
+
+
+
+
+
+
+
+
+// Updates to existing models (optional but recommended)
+// In models/course.model.js, add:
+// courseSchema.add({
+//   courseType: { type: String, enum: ["regular", "standalone"], default: "regular" },
+// });
+// For standalone courses, set courseType: 'standalone' when creating.
+// In completeCourse, check if (course.courseType !== 'standalone') instead of youtubeVideoId check.
+
+// Cloudinary config example (in app.js or config):
+// import cloudinary from 'cloudinary';
+// cloudinary.config({
+//   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+//   api_key: process.env.CLOUDINARY_API_KEY,
+//   api_secret: process.env.CLOUDINARY_API_SECRET,
+// });
+
+// Frontend notes (not backend, but for completeness):
+// - Embed YouTube: <iframe src={`https://www.youtube.com/embed/${youtubeVideoId}?enablejsapi=1`}></iframe>
+// - Use YouTube Player API to detect 'ended' state, then call /complete/:enrollmentId API.
+// - Display certificate: Link to certificateUrl or show PDF.
+
+
+
+
+{
+  "name": "ignite-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "concurrently \"cross-env SERVICE=main nodemon ./src/index.js\" \"cross-env SERVICE=video-service nodemon ./video-service/index.js\"",
+    "start:main": "cross-env SERVICE=main nodemon ./src/index.js",
+    "start:video": "cross-env SERVICE=video-service nodemon ./video-service/index.js",
+    "build": "echo 'Add build scripts if using TypeScript or bundlers'",
+    "test": "echo 'Add tests'"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.15.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "winston": "^3.17.0",
+    "pdf-lib": "^1.17.1"
+    // other dependencies ...
+  }
+}
