@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import connectDB from './config/dbConfig.js';
-import courseRoutes from './routes/course.routes.js';
+import courseRoutes from './routes/video.routes.js';
 
 dotenv.config();
 

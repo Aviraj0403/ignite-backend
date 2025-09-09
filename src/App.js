@@ -13,6 +13,7 @@ import ticketRoutes from './routers/ticket.routes.js';
 
 import { logSessionActivity } from './middlewares/logSessionActivity.js';
 import cors from 'cors';
+import videoRoutes from '../video-service/routes/video.routes.js';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';  // Import 'join' and 'dirname' from 'path'
 import { time } from 'console';
@@ -70,6 +71,8 @@ app.use('/api', examSubjectRoutes);
 app.use('/api', subjectRoutes);
 app.use('/api', marksheetRoutes);
 app.use('/api', ticketRoutes);
+
+app.use('/video-service', videoRoutes);
 
   // In development, serve assets (e.g., images, JavaScript) from 'public' folder
 app.use(express.static(join(__dirname, 'public')));
