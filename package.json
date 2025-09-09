@@ -5,8 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon ./index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently \"cross-env SERVICE=main nodemon ./src/index.js\" \"cross-env SERVICE=video-service nodemon ./video-service/index.js\"",
+    "start:main": "cross-env SERVICE=main nodemon ./src/index.js",
+    "start:video": "cross-env SERVICE=video-service nodemon ./video-service/index.js",
+    "build": "echo 'Add build scripts if using TypeScript or bundlers'",
+    "test": "echo 'Add tests'"
   },
   "dependencies": {
     "archiver": "^7.0.1",
@@ -30,7 +33,6 @@
     "multer": "^1.4.5-lts.2",
     "multer-storage-cloudinary": "^4.0.0",
     "nodemailer": "^6.10.0",
-    "nodemon": "^3.1.9",
     "number-to-words": "^1.2.4",
     "path": "^0.12.7",
     "path-to-regexp": "^8.2.0",
@@ -46,5 +48,10 @@
   },
   "keywords": [],
   "author": "Avi Raj",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.0.0",
+    "nodemon": "^3.1.10"
+  }
 }

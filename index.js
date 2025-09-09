@@ -10,7 +10,7 @@ const port = process.env.PORT || 4000;
 const startServer = () => {
   // Start the server after DB connection is successful
   app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+    console.log(`Main Server at ${port}`);
   });
 };
 
