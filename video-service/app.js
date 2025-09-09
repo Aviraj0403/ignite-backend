@@ -24,5 +24,6 @@ connectDB()
     console.error("MongoDB  Video Service failed:", err);
   });
 app.use('/api/standalone-courses', courseRoutes);
+app.use('/', courseRoutes);
 
 export default app;
