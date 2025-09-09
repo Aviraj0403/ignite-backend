@@ -8,6 +8,7 @@ const courseSchema = new mongoose.Schema({
   department: { type: String },
   description: { type: String },
   image: { type: String },
+  youtubeVideoId: { type: String },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
 });
